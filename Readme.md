@@ -24,8 +24,42 @@ describe('mocha tests', function () {
     expect(div.nodeName).eql('div'):
   });
 
+});
+```
 
+## Using with a library
 
+Load your library. See [test/jquery.js](test/jquery.js) for an example.
+
+```js
+describe('mocha tests', function () {
+
+  var $;
+  jsdom();
+
+  before(function () {
+    $ = require('jquery');
+  });
+
+  it('works', function () {
+    document.body.innerHTML = "<div>hola</div>";
+    expect($("div").html()).eql("hola");
+  });
+
+});
+```
+
+## Using with a library, alternate
+
+Pass it via `src`:
+
+```js
+describe('mocha tests', function () {
+  jsdom({
+    src: fs.readFileSync('jquery.js', 'utf-8')
+  })
+
+  ...
 });
 ```
 
@@ -34,11 +68,8 @@ describe('mocha tests', function () {
 You can pass jsdom options:
 
 ```js
-var jsdom = require('mocha-jsdom');
-
 describe('mocha tests', function () {
   jsdom({
-    src: fs.readFileSync('jquery.js', 'utf-8'),
     parsingMode: 'xml'
   });
 

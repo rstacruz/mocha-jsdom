@@ -1,7 +1,9 @@
 var expect = require('chai').expect;
+var jsdom = require('../index');
 
 describe('simple', function () {
-  require('../index')();
+
+  jsdom();
 
   it('has document', function () {
     var div = document.createElement('div');
@@ -9,13 +11,8 @@ describe('simple', function () {
   });
 
   it('has history', function () {
-    window.history.pushState({}, null, '/a/b/c');
-    expect(window.location.href).eql('file:///a/b/c');
+    history.pushState({}, null, '/a/b/c');
+    expect(location.href).eql('file:///a/b/c');
   });
-});
 
-describe('src', function () {
-  require('../index')({
-    src: '}}'
-  });
 });
