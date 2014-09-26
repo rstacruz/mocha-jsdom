@@ -119,4 +119,4 @@ Authored and maintained by Rico Sta. Cruz with help from contributors ([list][co
 > Twitter [@rstacruz](https://twitter.com/rstacruz)
 
 [MIT]: http://mit-license.org/
-[contributors]: http://github.com/rstacruz/nprogress/contributors
+[contributors]: http://github.com/rstacruz/mocha-jsdom/contributors
