@@ -12,6 +12,10 @@
     "mocha",
     "jsdom"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rstacruz/mocha-jsdom.git"
+  },
   "devDependencies": {
     "chai": "^1.9.1",
     "jquery": "^2.1.1",
