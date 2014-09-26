@@ -1,9 +1,22 @@
+var extend = require('util')._extend;
+
 /*
  * store original global keys
  */
 
 var blacklist = Object.keys(global);
 blacklist.push('constructor');
+
+/*
+ * default config
+ */
+
+var defaults = {
+  globalize: true,
+  console: true,
+  html: "<!doctype html><html><head><meta charset='utf-8'></head>"+
+    "<body></body></html>"
+};
 
 /*
  * simple jsdom integration.
@@ -14,20 +27,10 @@ blacklist.push('constructor');
  *     });
  */
 
-module.exports = function (options) {
-  if (!options) options = {};
+module.exports = function (_options) {
+  var options = extend(extend({}, defaults), _options);
 
   var keys = [];
-
-  var html = options.html;
-  if (typeof html === 'undefined')
-    html =
-      "<!doctype html><html><head><meta charset='utf-8'></head>"+
-      "<body></body></html>";
-
-  var useConsole = options.console;
-  if (typeof console === 'undefined')
-    console = true;
 
   /*
    * register jsdom before the entire test suite
@@ -35,7 +38,7 @@ module.exports = function (options) {
 
   global.before(function (next) {
     require('jsdom').env({
-      html: html,
+      html: options.html,
       url: options.url,
       file: options.file,
       scripts: options.scripts,
@@ -48,12 +51,12 @@ module.exports = function (options) {
     });
 
     function done (errors, window) {
-      if (options.globalize !== false)
+      if (options.globalize)
         propagateToGlobal(window);
       else
         global.window = window;
 
-      if (useConsole)
+      if (options.console)
         window.console = global.console;
 
       if (errors)
@@ -68,7 +71,7 @@ module.exports = function (options) {
    */
 
   global.after(function () {
-    if (options.globalize !== false) {
+    if (options.globalize) {
       keys.forEach(function (key) {
         delete global[key];
       });
