@@ -96,6 +96,14 @@ describe('mocha tests', function () {
 
 <br>
 
+## Under the hood
+
+* globals are propagated, and they're cleaned up after tests run.
+* ensures that `console` is available in the jsdom context.
+* jsdom errors are sanitized so that their stack traces are shortened.
+
+<br>
+
 ## Special config
 
 Other mocha-jsdom specific options:

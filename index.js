@@ -37,18 +37,8 @@ module.exports = function (_options) {
    */
 
   global.before(function (next) {
-    require('jsdom').env({
-      html: options.html,
-      url: options.url,
-      file: options.file,
-      scripts: options.scripts,
-      jar: options.jar,
-      parsingMode: options.parsingMode,
-      document: options.document,
-      features: options.features,
-      src: options.src,
-      done: done
-    });
+    require('jsdom').env(
+      extend(extend({}, options), { done: done }));
 
     function done (errors, window) {
       if (options.globalize)
@@ -60,7 +50,7 @@ module.exports = function (_options) {
         window.console = global.console;
 
       if (errors)
-        return rethrow(errors);
+        return next(getError(errors));
 
       next(null);
     }
@@ -102,7 +92,7 @@ module.exports = function (_options) {
    * re-throws jsdom errors
    */
 
-  function rethrow (errors) {
+  function getError (errors) {
     var data = errors[0].data;
     var err = data.error;
     err.message = err.message + " [jsdom]";
@@ -120,7 +110,8 @@ module.exports = function (_options) {
         return list;
       }, []).join("\n");
     }
-    throw err;
+
+    return err;
   }
 
 };
