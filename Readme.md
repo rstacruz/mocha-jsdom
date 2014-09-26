@@ -13,7 +13,7 @@ syntactic sugar and reasonable defaults.
 ## How to use
 
 ```sh
-$ npm i --save-dev jsdom
+$ npm i --save-dev mocha-jsdom
 ```
 
 [![npm version](http://img.shields.io/npm/v/mocha-jsdom.svg?style=flat)](https://npmjs.org/package/mocha-jsdom "View this project on npm")
