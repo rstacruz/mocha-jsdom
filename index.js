@@ -106,6 +106,20 @@ module.exports = function (_options) {
     var data = errors[0].data;
     var err = data.error;
     err.message = err.message + " [jsdom]";
+
+    // clean up stack trace
+    if (err.stack) {
+      err.stack = err.stack.split("\n")
+      .reduce(function (list, line) {
+        if (line.match(/node_modules.+(jsdom|mocha)/))
+          return list;
+        line = line
+          .replace(/file:\/\/.*<script>/g, '<script>')
+          .replace(/:undefined:undefined/g, '');
+        list.push(line);
+        return list;
+      }, []).join("\n");
+    }
     throw err;
   }
 
