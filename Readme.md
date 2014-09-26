@@ -41,7 +41,8 @@ describe('mocha tests', function () {
 
 ## Using with a library
 
-Load your library. See [test/jquery.js](test/jquery.js) for an example.
+Perfect for testing small DOM-consuming utilities in the console. See 
+[test/jquery.js](test/jquery.js) for an example.
 
 ```js
 describe('mocha tests', function () {
@@ -65,7 +66,7 @@ describe('mocha tests', function () {
 
 ## Using with a library, alternate
 
-Pass it via `src`:
+You can also pass the source code via `src`:
 
 ```js
 describe('mocha tests', function () {
