@@ -19,11 +19,15 @@ module.exports = function (options) {
 
   var keys = [];
 
-  var html = options.html ||
-    "<!doctype html><html><head><meta charset='utf-8'></head><body></body></html>";
+  var html = options.html;
+  if (typeof html === 'undefined')
+    html =
+      "<!doctype html><html><head><meta charset='utf-8'></head>"+
+      "<body></body></html>";
 
   var useConsole = options.console;
-  if (typeof console === 'undefined') console = true;
+  if (typeof console === 'undefined')
+    console = true;
 
   /*
    * register jsdom before the entire test suite
@@ -32,7 +36,13 @@ module.exports = function (options) {
   global.before(function (next) {
     require('jsdom').env({
       html: html,
+      url: options.url,
+      file: options.file,
       scripts: options.scripts,
+      jar: options.jar,
+      parsingMode: options.parsingMode,
+      document: options.document,
+      features: options.features,
       src: options.src,
       done: done
     });
