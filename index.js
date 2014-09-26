@@ -48,7 +48,7 @@ module.exports = function (options) {
     });
 
     function done (errors, window) {
-      if (options.globalize === false)
+      if (options.globalize !== false)
         propagateToGlobal(window);
       else
         global.window = window;
@@ -68,7 +68,7 @@ module.exports = function (options) {
    */
 
   global.after(function () {
-    if (options.globalize === false) {
+    if (options.globalize !== false) {
       keys.forEach(function (key) {
         delete global[key];
       });

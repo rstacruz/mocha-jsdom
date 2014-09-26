@@ -1,10 +1,16 @@
 # mocha-jsdom
 
-simple [jsdom] integration with mocha.
+Simple [jsdom] integration with mocha.
 
-Just use this inside your `describe()` block (or the global context). it will 
-make `window`, `document`, `history` (and so on) available, essentially making 
-your current node context feel like a browser.
+NB: before you try this library, learn about jsdom first. In fact, you may be 
+able to integrate jsdom into your tests *without* this library; this is mostly 
+syntactic sugar and reasonable defaults.
+
+## How to use
+
+Just use `jsdom()` inside your `describe(...)` block (or the global context). it 
+will make `window`, `document`, `history` (and so on) available, essentially 
+making your current node context feel like a browser.
 
 ```js
 var jsdom = require('mocha-jsdom');
@@ -13,13 +19,17 @@ describe('mocha tests', function () {
 
   jsdom();
 
-  it('works', function () {
+  it('has document', function () {
     var div = document.createElement('div');
     expect(div.nodeName).eql('div'):
   });
 
+
+
 });
 ```
+
+## Configuration
 
 You can pass jsdom options:
 
@@ -35,6 +45,8 @@ describe('mocha tests', function () {
   ...
 });
 ```
+
+## Special config
 
 Other mocha-jsdom specific options:
 
