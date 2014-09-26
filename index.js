@@ -10,7 +10,7 @@ blacklist.push('constructor');
  * You can pass jsdom options in, too:
  *
  *     require('./support/jsdom')({
- *       src: [jquery]
+ *       src: [ jquery ]
  *     });
  */
 
@@ -48,9 +48,17 @@ module.exports = function (options) {
     });
 
     function done (errors, window) {
-      propagateToGlobal(window);
-      if (useConsole) window.console = global.console;
-      if (errors) return rethrow(errors);
+      if (options.globalize === false)
+        propagateToGlobal(window);
+      else
+        global.window = window;
+
+      if (useConsole)
+        window.console = global.console;
+
+      if (errors)
+        return rethrow(errors);
+
       next(null);
     }
   });
@@ -60,9 +68,13 @@ module.exports = function (options) {
    */
 
   global.after(function () {
-    keys.forEach(function (key) {
-      delete global[key];
-    });
+    if (options.globalize === false) {
+      keys.forEach(function (key) {
+        delete global[key];
+      });
+    } else {
+      delete global.window;
+    }
   });
 
   /*
@@ -84,7 +96,7 @@ module.exports = function (options) {
   }
 
   /*
-   * re-throw
+   * re-throws jsdom errors
    */
 
   function rethrow (errors) {

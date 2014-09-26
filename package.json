@@ -1,13 +1,17 @@
 {
   "name": "mocha-jsdom",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "Simple integration of jsdom into mocha tests",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "author": "Rico Sta. Cruz <hi@ricostacruz.com>",
   "license": "MIT",
+  "keywords": [
+    "mocha",
+    "jsdom"
+  ],
   "devDependencies": {
     "chai": "^1.9.1",
     "jsdom": "^1.0.0-pre.7",

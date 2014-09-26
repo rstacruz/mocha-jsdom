@@ -28,11 +28,19 @@ var jsdom = require('mocha-jsdom');
 
 describe('mocha tests', function () {
   jsdom({
-    src: fs.readFileSync('jquery.js', 'utf-8')
+    src: fs.readFileSync('jquery.js', 'utf-8'),
+    parsingMode: 'xml'
   });
 
   ...
 });
-
 ```
+
+Other mocha-jsdom specific options:
+
+ * `globalize` - propagates to values in `window` to `global`. defaults to true.
+
+ * `console` - allows you to use `console.log` inside a jsdom script. defaults 
+ to true.
+
 [jsdom]: https://www.npmjs.org/package/jsdom
