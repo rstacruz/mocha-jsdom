@@ -6,7 +6,7 @@ Test frontend libraries in the console using Node.js, [mocha] and [jsdom].
 
 <br>
 
-## How to use
+## Usage
 
 ```sh
 $ npm i --save-dev mocha-jsdom
@@ -14,9 +14,10 @@ $ npm i --save-dev mocha-jsdom
 
 [![npm version](http://img.shields.io/npm/v/mocha-jsdom.svg?style=flat)](https://npmjs.org/package/mocha-jsdom "View this project on npm")
 
-Just use `jsdom()` inside your `describe(...)` block (or the global context). it 
-will make `window`, `document`, `history` (and so on) available, essentially 
-making your current node context feel like a browser.
+Use `jsdom()` inside your `describe(...)` block (or the global context). It will 
+turn your Node.js environment into a mock browser environment supporting the 
+full DOM and browser API. The variables `window`, `document`, `history` (and so 
+on) will then be available for use.
 
 ```js
 var jsdom = require('mocha-jsdom');
@@ -35,11 +36,7 @@ describe('mocha tests', function () {
 
 <br>
 
-## Under the hood
-
-__NB:__ Before you try this library, learn about jsdom first. In fact, you may be 
-able to integrate jsdom into your tests *without* this library; this is mostly 
-syntactic sugar and reasonable defaults.
+## How it works
 
 mocha-jsdom is a simple glue to integrate [jsdom] to mocha.
 
@@ -47,10 +44,16 @@ Invoking `jsdom()` will inject `before` and `after` handlers to the current
 mocha suite which will setup and teardown jsdom. Here's what it does:
 
 * __Window__: `global.window` will be available as the jsdom.
+
 * __Globals__: global variables like `document` and `history` are propagated, 
   and they're cleaned up after tests run.
+
 * __Error handling__: jsdom errors are sanitized so that their stack traces are 
 shortened.
+
+__NB:__ Before you try this library, learn about jsdom first. In fact, you may be 
+able to integrate jsdom into your tests *without* this library; this is mostly 
+syntactic sugar and reasonable defaults.
 
 <br>
 
