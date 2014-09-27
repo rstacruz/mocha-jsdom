@@ -1,10 +1,6 @@
 # mocha-jsdom
 
-Simple [jsdom] integration with mocha.
-
-NB: before you try this library, learn about jsdom first. In fact, you may be 
-able to integrate jsdom into your tests *without* this library; this is mostly 
-syntactic sugar and reasonable defaults.
+Test frontend libraries in the console using Node.js, [mocha] and [jsdom].  
 
 [![Status](http://img.shields.io/travis/rstacruz/mocha-jsdom/master.svg?style=flat)](https://travis-ci.org/rstacruz/mocha-jsdom "See test builds")
 
@@ -36,6 +32,25 @@ describe('mocha tests', function () {
 
 });
 ```
+
+<br>
+
+## Under the hood
+
+__NB:__ Before you try this library, learn about jsdom first. In fact, you may be 
+able to integrate jsdom into your tests *without* this library; this is mostly 
+syntactic sugar and reasonable defaults.
+
+mocha-jsdom is a simple glue to integrate [jsdom] to mocha.
+
+Invoking `jsdom()` will inject `before` and `after` handlers to the current 
+mocha suite which will setup and teardown jsdom. Here's what it does:
+
+* __Window__: `global.window` will be available as the jsdom.
+* __Globals__: global variables like `document` and `history` are propagated, 
+  and they're cleaned up after tests run.
+* __Error handling__: jsdom errors are sanitized so that their stack traces are 
+shortened.
 
 <br>
 
@@ -93,14 +108,6 @@ describe('mocha tests', function () {
   ...
 });
 ```
-
-<br>
-
-## Under the hood
-
-* globals are propagated, and they're cleaned up after tests run.
-* ensures that `console` is available in the jsdom context.
-* jsdom errors are sanitized so that their stack traces are shortened.
 
 <br>
 
