@@ -37,6 +37,9 @@ module.exports = function (_options) {
    */
 
   global.before(function (next) {
+    if (global.window)
+      throw new Error("mocha-jsdom: already a browser environment, or mocha-jsdom invoked twice");
+
     require('jsdom').env(
       extend(extend({}, options), { done: done }));
 
