@@ -82,7 +82,9 @@ module.exports = function (_options) {
       if (!window.hasOwnProperty(key)) continue;
       if (~blacklist.indexOf(key)) continue;
       if (key in global) {
-        console.warn("[jsdom] Warning: skipping global['"+key+"']");
+        if (process.env.JSDOM_VERBOSE) {
+          console.warn("[jsdom] Warning: skipping cleanup of global['"+key+"']");
+        }
         continue;
       }
 
