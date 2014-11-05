@@ -28,7 +28,7 @@ describe('mocha tests', function () {
 
   it('has document', function () {
     var div = document.createElement('div');
-    expect(div.nodeName).eql('div'):
+    expect(div.nodeName).eql('DIV');
   });
 
 });
