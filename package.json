@@ -4,7 +4,8 @@
   "description": "Simple integration of jsdom into mocha tests",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "coverage": "env COVERAGE=1 mocha -R html-cov > coverage.html && open coverage.html"
   },
   "author": "Rico Sta. Cruz <hi@ricostacruz.com>",
   "license": "MIT",
@@ -17,11 +18,14 @@
     "url": "https://github.com/rstacruz/mocha-jsdom.git"
   },
   "devDependencies": {
+    "blanket": "^1.1.6",
     "chai": "^1.9.1",
+    "coveralls": "^2.11.2",
     "jquery": "^2.1.1",
     "jsdom": "^1.0.0-pre.7",
     "mocha": "^1.21.4",
-    "mocha-clean": "^0.2.0"
+    "mocha-clean": "^0.2.0",
+    "mocha-lcov-reporter": "0.0.1"
   },
   "peerDependencies": {
     "mocha": "*",
