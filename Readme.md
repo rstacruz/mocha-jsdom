@@ -21,6 +21,7 @@ on) will then be available for use.
 
 ```js
 var jsdom = require('mocha-jsdom');
+var expect = require('chai').expect;
 
 describe('mocha tests', function () {
 
