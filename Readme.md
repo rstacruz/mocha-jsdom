@@ -125,6 +125,7 @@ Other mocha-jsdom specific options:
  to true.
 
 [jsdom]: https://www.npmjs.org/package/jsdom
+[mocha]: https://www.npmjs.com/package/mocha
 
 <br>
 
