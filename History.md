@@ -1,3 +1,9 @@
+## v0.2.1 - Feb 19, 2014
+
+* Add `LICENSE` file
+* Update documentation
+* No functionality changes
+
 ## v0.2.0 - November 5, 2014
 
 * Skip warnings. Add `JSDOM_VERBOSE=1` to your env to reenable them.
