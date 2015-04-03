@@ -1,3 +1,11 @@
+## v0.3.0 - Apr 3, 2015
+
+* Bump `jsdom` dependency version. This fixes the "needs a context" error ([#3], [#4], [@nacyot])
+
+[#3]: https://github.com/rstacruz/mocha-jsdom/issues/3
+[#4]: https://github.com/rstacruz/mocha-jsdom/issues/4
+[@nacyot]: https://github.com/nacyot
+
 ## v0.2.1 - Feb 19, 2014
 
 * Add `LICENSE` file
