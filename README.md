@@ -37,6 +37,12 @@ describe('mocha tests', function () {
 
 <br>
 
+## Node and io.js information
+
+As of jsdom 4.0.0, [jsdom now requires io.js](https://github.com/tmpvar/jsdom/blob/master/Changelog.md#400) and will not work with Node.js 0.12 or below.
+
+<br>
+
 ## How it works
 
 mocha-jsdom is a simple glue to integrate [jsdom] to mocha.
