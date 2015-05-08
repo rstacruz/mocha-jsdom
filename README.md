@@ -1,6 +1,6 @@
 # mocha-jsdom
 
-Test frontend libraries in the console using Node.js, [mocha] and [jsdom].  
+Test frontend libraries in the console using io.js, [mocha] and [jsdom].  
 
 [![Status](http://img.shields.io/travis/rstacruz/mocha-jsdom/master.svg?style=flat)](https://travis-ci.org/rstacruz/mocha-jsdom "See test builds")
 
