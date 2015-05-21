@@ -14,6 +14,7 @@ blacklist.push('constructor');
 var defaults = {
   globalize: true,
   console: true,
+  useBeforeEach: false,
   html: "<!doctype html><html><head><meta charset='utf-8'></head>"+
     "<body></body></html>"
 };
@@ -32,11 +33,14 @@ module.exports = function (_options) {
 
   var keys = [];
 
+  var before = options.useBeforeEach ? global.beforeEach : global.before;
+  var after = options.useBeforeEach ? global.afterEach : global.after;
+
   /*
    * register jsdom before the entire test suite
    */
 
-  global.before(function (next) {
+  before(function (next) {
     if (global.window)
       throw new Error("mocha-jsdom: already a browser environment, or mocha-jsdom invoked twice");
 
@@ -63,7 +67,7 @@ module.exports = function (_options) {
    * undo keys from being propagated to global after the test suite
    */
 
-  global.after(function () {
+  after(function () {
     if (options.globalize) {
       keys.forEach(function (key) {
         delete global[key];

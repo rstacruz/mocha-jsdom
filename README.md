@@ -130,6 +130,9 @@ Other mocha-jsdom specific options:
  * `console` - allows you to use `console.log` inside a jsdom script. defaults 
  to true.
 
+ * `useBeforeEach` - bind to mocha's `beforeEach`/`afterEach` rather than `before`/`after`.
+ defaults to false.
+
 [jsdom]: https://www.npmjs.org/package/jsdom
 [mocha]: https://www.npmjs.com/package/mocha
 
