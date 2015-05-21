@@ -1,6 +1,6 @@
 {
   "name": "mocha-jsdom",
-  "version": "0.3.0",
+  "version": "0.3.01",
   "description": "Simple integration of jsdom into mocha tests",
   "main": "index.js",
   "scripts": {
