@@ -15,6 +15,7 @@ var defaults = {
   globalize: true,
   console: true,
   useEach: false,
+  skipWindowCheck: false,
   html: "<!doctype html><html><head><meta charset='utf-8'></head>"+
     "<body></body></html>"
 };
@@ -41,8 +42,11 @@ module.exports = function (_options) {
    */
 
   before(function (next) {
-    if (global.window)
-      throw new Error("mocha-jsdom: already a browser environment, or mocha-jsdom invoked twice");
+    if (global.window && !options.skipWindowCheck) {
+      throw new Error(
+        "mocha-jsdom: already a browser environment, or mocha-jsdom invoked " +
+        "twice. use 'skipWindowCheck' to disable this check.");
+    }
 
     require('jsdom').env(
       extend(extend({}, options), { done: done }));

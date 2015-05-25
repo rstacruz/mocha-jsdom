@@ -133,6 +133,9 @@ Other mocha-jsdom specific options:
  * `useEach` - bind to Mocha's `beforeEach`/`afterEach` rather than `before`/`after`.
  defaults to false.
 
+ * `skipWindowCheck` - skips checking of `window` at startup. When false,
+ mocha-jsdom will throw an error if `window` already exists. Defaults to false.
+
 [jsdom]: https://www.npmjs.org/package/jsdom
 [mocha]: https://www.npmjs.com/package/mocha
 
