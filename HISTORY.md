@@ -1,6 +1,7 @@
-## [v0.4.0]
+## [v0.4.0] - May 25, 2015
 
 * [#5] - Add `useEach` option. ([@jasco], [#6])
+* [#7] - Add a `skipWindowCheck` option.
 
 ## [v0.3.0] - Apr 3, 2015
 
