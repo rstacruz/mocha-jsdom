@@ -35,6 +35,7 @@
 
 [#5]: https://github.com/rstacruz/mocha-jsdom/issues/5
 [#6]: https://github.com/rstacruz/mocha-jsdom/issues/6
+[#7]: https://github.com/rstacruz/mocha-jsdom/issues/7
 [@jasco]: https://github.com/jasco
 [v0.4.0]: https://github.com/rstacruz/mocha-jsdom/compare/v0.3.0...v0.4.0
 [v0.3.0]: https://github.com/rstacruz/mocha-jsdom/compare/v0.2.1...v0.3.0
