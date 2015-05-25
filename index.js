@@ -14,7 +14,7 @@ blacklist.push('constructor');
 var defaults = {
   globalize: true,
   console: true,
-  useBeforeEach: false,
+  useEach: false,
   html: "<!doctype html><html><head><meta charset='utf-8'></head>"+
     "<body></body></html>"
 };
@@ -33,8 +33,8 @@ module.exports = function (_options) {
 
   var keys = [];
 
-  var before = options.useBeforeEach ? global.beforeEach : global.before;
-  var after = options.useBeforeEach ? global.afterEach : global.after;
+  var before = options.useEach ? global.beforeEach : global.before;
+  var after = options.useEach ? global.afterEach : global.after;
 
   /*
    * register jsdom before the entire test suite

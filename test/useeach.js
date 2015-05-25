@@ -1,9 +1,9 @@
 var expect = require('chai').expect;
 var jsdom = require('../index');
 
-describe('check useBeforeEach false (default)', function () {
+describe('check useEach false (default)', function () {
 
-  var someContent = "<div>hola</div>"
+  var someContent = "<div>hola</div>";
   jsdom();
 
   it('check that html body is empty', function () {
@@ -21,10 +21,10 @@ describe('check useBeforeEach false (default)', function () {
 
 });
 
-describe('check useBeforeEach true', function () {
+describe('check useEach true', function () {
 
-  var someContent = "<div>hola</div>"
-  jsdom({ useBeforeEach: true });
+  var someContent = "<div>hola</div>";
+  jsdom({ useEach: true });
 
   it('check that html body is empty', function () {
     expect(document.body.innerHTML).to.be.empty;
