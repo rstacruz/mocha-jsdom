@@ -1,3 +1,8 @@
+## [v0.5.0] - Jun 26, 2015
+
+* Add `rerequire()` to help with using mocha-jsdom with `mocha --watch`.
+* Internal: change coding standard to feross/standard.
+
 ## [v0.4.0] - May 25, 2015
 
 * [#5] - Add `useEach` option. ([@jasco], [#6])
@@ -37,6 +42,7 @@
 [#6]: https://github.com/rstacruz/mocha-jsdom/issues/6
 [#7]: https://github.com/rstacruz/mocha-jsdom/issues/7
 [@jasco]: https://github.com/jasco
+[v0.5.0]: https://github.com/rstacruz/mocha-jsdom/compare/v0.4.0...v0.5.0
 [v0.4.0]: https://github.com/rstacruz/mocha-jsdom/compare/v0.3.0...v0.4.0
 [v0.3.0]: https://github.com/rstacruz/mocha-jsdom/compare/v0.2.1...v0.3.0
 [v0.2.1]: https://github.com/rstacruz/mocha-jsdom/compare/v0.2.0...v0.2.1

@@ -20,19 +20,19 @@ full DOM and browser API. The variables `window`, `document`, `history` (and so
 on) will then be available for use.
 
 ```js
-var jsdom = require('mocha-jsdom');
-var expect = require('chai').expect;
+var jsdom = require('mocha-jsdom')
+var expect = require('chai').expect
 
 describe('mocha tests', function () {
 
-  jsdom();
+  jsdom()
 
   it('has document', function () {
-    var div = document.createElement('div');
-    expect(div.nodeName).eql('DIV');
-  });
+    var div = document.createElement('div')
+    expect(div.nodeName).eql('DIV')
+  })
 
-});
+})
 ```
 
 <br>
@@ -72,19 +72,19 @@ Perfect for testing small DOM-consuming utilities in the console. See
 ```js
 describe('mocha tests', function () {
 
-  var $;
-  jsdom();
+  var $
+  jsdom()
 
   before(function () {
-    $ = require('jquery');
-  });
+    $ = require('jquery')
+  })
 
   it('works', function () {
-    document.body.innerHTML = "<div>hola</div>";
-    expect($("div").html()).eql("hola");
-  });
+    document.body.innerHTML = '<div>hola</div>'
+    expect($("div").html()).eql('hola')
+  })
 
-});
+})
 ```
 
 <br>
@@ -100,7 +100,7 @@ describe('mocha tests', function () {
   })
 
   ...
-});
+})
 ```
 
 <br>
@@ -113,10 +113,10 @@ You can pass jsdom options:
 describe('mocha tests', function () {
   jsdom({
     parsingMode: 'xml'
-  });
+  })
 
   ...
-});
+})
 ```
 
 <br>
