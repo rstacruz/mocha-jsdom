@@ -121,6 +121,28 @@ describe('mocha tests', function () {
 
 <br>
 
+## Working with mocha --watch
+
+When using with `--watch`, you my encounter strange errors from 3rd-party
+libraries like jQuery not working properly.
+
+In these cases, use `require('mocha-jsdom').rerequire` instead of `require()`.
+This will ensure that the `require()` call will always happen.
+
+```js
+var $
+var jsdom = require('mocha-jsdom')
+var rerequire = jsdom.rerequire
+
+jsdom()
+
+before(function () {
+  $ = rerequire('jquery')
+})
+```
+
+<br>
+
 ## Special config
 
 Other mocha-jsdom specific options:

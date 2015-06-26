@@ -1,4 +1,5 @@
 var extend = require('util')._extend
+var Path = require('path')
 
 /*
  * store original global keys
@@ -131,5 +132,48 @@ module.exports = function (_options) {
 
     return err
   }
+}
 
+module.exports.rerequire = rerequire
+
+/**
+ * Requires a module via `require()`, but invalidates the cache so it may be
+ * called again in the future. Useful for `mocha --watch`.
+ *
+ *     var rerequire = require('mocha-jsdom').rerequire
+ *     var $ = rerequire('jquery')
+ */
+
+function rerequire (module) {
+  if (module[0] === '.') {
+    module = Path.join(Path.dirname(getCaller()), module)
+  }
+
+  var oldkeys = Object.keys(require.cache)
+  var result = require(module)
+  var newkeys = Object.keys(require.cache)
+  newkeys.forEach(function (newkey) {
+    if (!~oldkeys.indexOf(newkey)) {
+      delete require.cache[newkey]
+    }
+  })
+  return result
+}
+
+/**
+ * Internal: gets the filename of the caller function. The `offset` defines how
+ * many hops away it's expected to be from in the stack trace.
+ *
+ * See: http://stackoverflow.com/questions/16697791/nodejs-get-filename-of-caller-function
+ */
+
+function getCaller (offset) {
+  /* eslint-disable handle-callback-err */
+  if (typeof offset !== 'number') offset = 1
+  var old = Error.prepareStackTrace
+  var err = new Error()
+  Error.prepareStackTrace = function (err, stack) { return stack }
+  var fname = err.stack[1 + offset].getFileName()
+  Error.prepareStackTrace = old
+  return fname
 }
