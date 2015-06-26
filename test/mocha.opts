@@ -1,1 +1,2 @@
+--require test/setup
 -r mocha-clean/brief

@@ -1,23 +1,24 @@
-var expect = require('chai').expect;
-var jsdom = require('../index');
+/* global describe, before, it, document, expect */
+
+var jsdom = require('../index')
 
 describe('jquery', function () {
 
-  var $;
-  jsdom();
+  var $
+  jsdom()
 
   before(function () {
-    $ = require('jquery');
-  });
+    $ = require('jquery')
+  })
 
   it('creating elements works', function () {
-    var div = $("<div>hello <b>world</b></div>");
-    expect(div.html()).to.eql('hello <b>world</b>');
-  });
+    var div = $('<div>hello <b>world</b></div>')
+    expect(div.html()).to.eql('hello <b>world</b>')
+  })
 
   it('lookup works', function () {
-    document.body.innerHTML = "<div>hola</div>";
-    expect($("div").html()).eql("hola");
-  });
+    document.body.innerHTML = '<div>hola</div>'
+    expect($('div').html()).eql('hola')
+  })
 
-});
+})

@@ -25,7 +25,9 @@
     "jsdom": ">=3.1.2",
     "mocha": "^1.21.4",
     "mocha-clean": "^0.2.0",
-    "mocha-lcov-reporter": "0.0.1"
+    "mocha-lcov-reporter": "0.0.1",
+    "mocha-standard": "0.0.5",
+    "standard": "^4.3.3"
   },
   "peerDependencies": {
     "mocha": "*",
