@@ -1,10 +1,6 @@
 /* global it, expect, describe */
 /* jshint expr: true */
 
-/*
- * run `mocha error.js` to see this fail.
- */
-
 var jsdom = require('../../index')
 
 describe('error', function () {
