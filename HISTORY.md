@@ -1,3 +1,10 @@
+## [v1.0.0] - Jul  4, 2015
+
+* Add testling/browserify support.
+* Add more examples.
+
+[v1.0.0]: https://github.com/rstacruz/mocha-jsdom/compare/v0.5.0...v1.0.0
+
 ## [v0.5.0] - Jun 26, 2015
 
 * Add `rerequire()` to help with using mocha-jsdom with `mocha --watch`.

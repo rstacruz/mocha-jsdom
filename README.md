@@ -36,7 +36,7 @@ describe('mocha tests', function () {
 })
 ```
 
-See [examples](examples/) for examples on how it's used.
+See [examples/basic](examples/basic) for an example of a basic setup.
 
 <br>
 
@@ -89,6 +89,8 @@ describe('mocha tests', function () {
 
 })
 ```
+
+See [examples/basic](examples/basic) for an example of a basic setup.
 
 <br>
 
@@ -163,6 +165,14 @@ Other mocha-jsdom specific options:
 
 [jsdom]: https://www.npmjs.org/package/jsdom
 [mocha]: https://www.npmjs.com/package/mocha
+
+<br>
+
+## Testling support
+
+Yes, fully compatible with testling. A test suite using jsdom should be able to use testling.
+
+See [examples/basic](examples/basic/) for a setup that allows for testing via iojs (jsdom), testling, and mocha via the browser.
 
 <br>
 
