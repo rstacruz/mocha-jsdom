@@ -36,7 +36,7 @@ describe('mocha tests', function () {
 })
 ```
 
-See [example](example/) for an example on how it's used.
+See [examples](examples/) for examples on how it's used.
 
 <br>
 

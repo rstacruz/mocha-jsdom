@@ -1,7 +1,11 @@
 /* global describe, it, expect */
 
+/*
+ * run `mocha src.js` to see this fail.
+ */
+
 describe('src', function () {
-  require('../index')({
+  require('../../index')({
     src: '}}'
   })
 

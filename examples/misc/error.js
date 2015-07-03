@@ -1,8 +1,13 @@
 /* global it, expect, describe */
 /* jshint expr: true */
-var jsdom = require('../index')
 
-describe('src', function () {
+/*
+ * run `mocha error.js` to see this fail.
+ */
+
+var jsdom = require('../../index')
+
+describe('error', function () {
   jsdom({
     src: "(function () { throw new Error('ffff'); })()"
   })
