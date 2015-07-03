@@ -36,6 +36,8 @@ describe('mocha tests', function () {
 })
 ```
 
+See [example](example/) for an example on how it's used.
+
 <br>
 
 ## Node and io.js information

@@ -39,5 +39,6 @@
   "scripts": {
     "coverage": "env COVERAGE=1 mocha -R html-cov > coverage.html && open coverage.html",
     "test": "mocha"
-  }
+  },
+  "browser": "browser.js"
 }
