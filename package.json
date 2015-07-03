@@ -1,21 +1,10 @@
 {
   "name": "mocha-jsdom",
-  "version": "0.5.0",
   "description": "Simple integration of jsdom into mocha tests",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha",
-    "coverage": "env COVERAGE=1 mocha -R html-cov > coverage.html && open coverage.html"
-  },
-  "author": "Rico Sta. Cruz <hi@ricostacruz.com>",
-  "license": "MIT",
-  "keywords": [
-    "mocha",
-    "jsdom"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rstacruz/mocha-jsdom.git"
+  "version": "0.5.0",
+  "author": "Rico Sta. Cruz <rico@ricostacruz.com>",
+  "bugs": {
+    "url": "https://github.com/rstacruz/mocha-jsdom/issues"
   },
   "devDependencies": {
     "blanket": "^1.1.6",
@@ -28,8 +17,27 @@
     "mocha-standard": "0.0.5",
     "standard": "^4.3.3"
   },
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "homepage": "https://github.com/rstacruz/mocha-jsdom#readme",
+  "keywords": [
+    "jsdom",
+    "mocha"
+  ],
+  "license": "MIT",
+  "main": "index.js",
   "peerDependencies": {
-    "mocha": "*",
-    "jsdom": "*"
+    "jsdom": "*",
+    "mocha": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rstacruz/mocha-jsdom.git"
+  },
+  "scripts": {
+    "coverage": "env COVERAGE=1 mocha -R html-cov > coverage.html && open coverage.html",
+    "test": "mocha"
   }
 }
