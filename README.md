@@ -2,7 +2,6 @@
 
 Test frontend libraries in the console using io.js, [mocha] and [jsdom].  
 
-[![Status](http://img.shields.io/travis/rstacruz/mocha-jsdom/master.svg?style=flat)](https://travis-ci.org/rstacruz/mocha-jsdom "See test builds")
 [![Status](https://travis-ci.org/rstacruz/mocha-jsdom.svg?branch=master)](https://travis-ci.org/rstacruz/mocha-jsdom "See test builds")
 
 <br>
