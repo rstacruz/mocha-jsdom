@@ -1,3 +1,4 @@
+/* global describe, it, before, expect */
 require('./setup')
 
 describe('my library', function () {

@@ -4,5 +4,5 @@ if (typeof process === 'object') {
   require('mocha-jsdom')()
 } else {
   window.expect = window.chai.expect
-  window.require = function () { /*noop*/ }
+  window.require = function () { /* noop */ }
 }
