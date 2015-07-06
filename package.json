@@ -37,7 +37,7 @@
     "url": "git+https://github.com/rstacruz/mocha-jsdom.git"
   },
   "scripts": {
-    "coverage": "istanbul cover _mocha && istanbul report html && ls coverage",
+    "coverage": "istanbul cover _mocha -- -R spec",
     "test": "mocha"
   },
   "browser": "browser.js"
