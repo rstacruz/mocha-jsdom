@@ -10,6 +10,7 @@
     "blanket": "^1.1.6",
     "chai": "^3.0.0",
     "coveralls": "^2.11.2",
+    "istanbul": "^0.3.17",
     "jquery": "^2.1.1",
     "jsdom": ">=3.1.2",
     "mocha": "^2.2.5",
@@ -36,7 +37,7 @@
     "url": "git+https://github.com/rstacruz/mocha-jsdom.git"
   },
   "scripts": {
-    "coverage": "env COVERAGE=1 mocha -R html-cov > coverage.html && open coverage.html",
+    "coverage": "istanbul cover _mocha && istanbul report html && ls coverage",
     "test": "mocha"
   },
   "browser": "browser.js"
