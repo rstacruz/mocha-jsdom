@@ -4,7 +4,6 @@
 var jsdom = require('../index')
 
 describe('skipWindowCheck: true', function () {
-
   before(function () {
     global.window = {}
   })
@@ -19,5 +18,4 @@ describe('skipWindowCheck: true', function () {
     var div = document.createElement('div')
     expect(div.nodeName).eql('DIV')
   })
-
 })
