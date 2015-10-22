@@ -12,6 +12,6 @@ describe('simple', function () {
 
   it('has history', function () {
     history.pushState({}, null, '/a/b/c')
-    expect(location.href).eql('file:///a/b/c')
+    expect(location.href).match(/\/a\/b\/c$/)
   })
 })
