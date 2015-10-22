@@ -19,11 +19,9 @@ describe('check useEach false (default)', function () {
   it('has document persisting across tests', function () {
     expect(document.body.innerHTML).eql(someContent)
   })
-
 })
 
 describe('check useEach true', function () {
-
   var someContent = '<div>hola</div>'
   jsdom({ useEach: true })
 

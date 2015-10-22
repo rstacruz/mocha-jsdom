@@ -3,7 +3,6 @@
 var jsdom = require('../index')
 
 describe('jquery', function () {
-
   var $
   jsdom()
 
@@ -20,5 +19,4 @@ describe('jquery', function () {
     document.body.innerHTML = '<div>hola</div>'
     expect($('div').html()).eql('hola')
   })
-
 })
