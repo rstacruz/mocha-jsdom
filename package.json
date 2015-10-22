@@ -7,16 +7,16 @@
     "url": "https://github.com/rstacruz/mocha-jsdom/issues"
   },
   "devDependencies": {
-    "blanket": "^1.1.6",
-    "chai": "^3.0.0",
-    "coveralls": "^2.11.2",
-    "istanbul": "^0.3.17",
-    "jquery": "^2.1.1",
-    "jsdom": ">=3.1.2",
-    "mocha": "^2.2.5",
+    "blanket": "1.1.7",
+    "chai": "3.4.0",
+    "coveralls": "2.11.4",
+    "istanbul": "0.3.22",
+    "jquery": "2.1.4",
+    "jsdom": "7.0.2",
+    "mocha": "2.3.3",
     "mocha-lcov-reporter": "0.0.1",
     "mocha-standard": "0.0.5",
-    "standard": "^4.3.3"
+    "standard": "4.5.4"
   },
   "directories": {
     "test": "test"
