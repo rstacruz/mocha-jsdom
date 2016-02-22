@@ -1,7 +1,7 @@
 {
   "name": "mocha-jsdom",
   "description": "Simple integration of jsdom into mocha tests",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Rico Sta. Cruz <rico@ricostacruz.com>",
   "bugs": {
     "url": "https://github.com/rstacruz/mocha-jsdom/issues"

@@ -1,3 +1,10 @@
+## [v1.1.0]
+> Feb 22, 2016
+
+* [#18] - Initialize global.window when it is undefined; fixes compatibility with [airbnb/enzyme][]. ([@moonboots])
+
+[v1.1.0]: https://github.com/rstacruz/mocha-jsdom/compare/v1.0.0...v1.1.0
+
 ## [v1.0.0] - Jul  4, 2015
 
 * Add testling/browserify support.
@@ -41,6 +48,8 @@
 
 * Re-release with updated Readme.
 
+[airbnb/enzyme]: https://github.com/airbnb/enzyme
+
 ## v0.1.0 - September 25, 2014
 
 * Initial version.
@@ -56,3 +65,5 @@
 [v0.2.0]: https://github.com/rstacruz/mocha-jsdom/compare/v0.1.2...v0.2.0
 [v0.1.2]: https://github.com/rstacruz/mocha-jsdom/compare/v0.1.1...v0.1.2
 [v0.1.1]: https://github.com/rstacruz/mocha-jsdom/compare/v0.1.0...v0.1.1
+[#18]: https://github.com/rstacruz/mocha-jsdom/issues/18
+[@moonboots]: https://github.com/moonboots
