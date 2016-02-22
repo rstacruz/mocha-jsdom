@@ -93,7 +93,7 @@ module.exports = function (_options) {
     for (var key in window) {
       if (!window.hasOwnProperty(key)) continue
       if (~blacklist.indexOf(key)) continue
-      if (key in global) {
+      if (global[key]) {
         if (process.env.JSDOM_VERBOSE) {
           console.warn("[jsdom] Warning: skipping cleanup of global['" + key + "']")
         }
