@@ -1,10 +1,13 @@
+> _Deprecation notice:_
+> Consider [jsdom-global](https://github.com/rstacruz/jsdom-global) instead, a simpler alternative that also works outside of Mocha. `mocha-jsdom` still works, but `jsdom-global` is better supported.
+
+---
+
 # mocha-jsdom
 
-Test frontend libraries in the console using io.js, [mocha] and [jsdom].  
+> Test frontend libraries in the console using Node.js, [mocha] and [jsdom]. 
 
 [![Status](https://travis-ci.org/rstacruz/mocha-jsdom.svg?branch=master)](https://travis-ci.org/rstacruz/mocha-jsdom "See test builds")
-
-> Also consider [jsdom-global](https://github.com/rstacruz/jsdom-global), a simpler alternative that also works outside of Mocha.
 
 <br>
 
