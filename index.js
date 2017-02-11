@@ -63,6 +63,63 @@ module.exports = function (_options) {
         window.console = global.console
       }
 
+      var _attrToDataKey = function (val) {
+        var out = val.substr(5)
+        return out.split('-').map(function (part, inx) {
+          if (!inx) {
+            return part
+          }
+          return part.charAt(0).toUpperCase() + part.substr(1)
+        }).join('')
+      }
+      var _datasetProxy = null
+      var _getNodeDataAttrs = function (el) {
+        var i = 0
+        var atts = el.attributes
+        var len = atts.length
+        var attr
+        var _datasetMap = []
+        var proxy = {}
+        var datakey
+
+        for (; i < len; i++) {
+          attr = atts[ i ].nodeName
+          if (attr.indexOf('data-') === 0) {
+            datakey = _attrToDataKey(attr)
+
+            if (typeof _datasetMap[datakey] !== 'undefined') {
+              break
+            }
+
+            _datasetMap[datakey] = atts[i].nodeValue;
+
+            (function (datakey) {
+              Object.defineProperty(proxy, datakey, {
+                enumerable: true,
+                configurable: true,
+                get: function () {
+                  return _datasetMap[datakey]
+                },
+                set: function (val) {
+                  _datasetMap[ datakey ] = val
+                  el.setAttribute(attr, val)
+                }
+              })
+            }(datakey))
+          }
+        }
+        return proxy
+      }
+
+      if (!!global && !!global.window && !!global.window.Element && !global.window.Element.prototype.hasOwnProperty('dataset')) {
+        Object.defineProperty(global.window.Element.prototype, 'dataset', {
+          get: function () {
+            _datasetProxy = _datasetProxy || _getNodeDataAttrs(this)
+            return _datasetProxy
+          }
+        })
+      }
+
       if (errors) {
         return next(getError(errors))
       }
