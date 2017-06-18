@@ -11,7 +11,7 @@ describe('simple', function () {
   })
 
   it('has history', function () {
-    history.pushState({}, null, '/a/b/c')
+    history.pushState({}, 'abc', '#/a/b/c')
     expect(location.href).match(/\/a\/b\/c$/)
   })
 })
