@@ -48,8 +48,9 @@ module.exports = function (_options) {
         'mocha-jsdom: already a browser environment, or mocha-jsdom invoked ' +
         "twice. use 'skipWindowCheck' to disable this check.")
     }
-      require('jsdom/lib/old-api').env(
-      extend(extend({}, options), { done: done }))
+    require('jsdom/lib/old-api').env(
+      extend(extend({}, options), { done: done })
+    )
 
     function done (errors, window) {
       if (options.globalize) {
