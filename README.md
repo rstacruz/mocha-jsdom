@@ -44,6 +44,24 @@ See [examples/basic](examples/basic) for an example of a basic setup.
 
 <br>
 
+## Upgrading to v2.0.0
+
+If you are coming from mocha-jsdom v1.x, remove `jsdom` if you're not using it before upgrading. `jsdom` is now a direct dependency of `mocha-jsdom`.
+
+```bash
+# using Yarn
+yarn remove jsdom
+yarn upgrade mocha-jsdom
+```
+
+```bash
+# using npm
+npm uninstall -S -D jsdom
+npm upgrade mocha-jsdom
+```
+
+<br>
+
 ## Node and io.js information
 
 As of jsdom 4.0.0, [jsdom now requires io.js](https://github.com/tmpvar/jsdom/blob/master/Changelog.md#400) and will not work with Node.js 0.12 or below.
