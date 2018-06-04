@@ -8,7 +8,7 @@ describe('check useEach false (default)', function () {
   jsdom()
 
   it('check that html body is empty', function () {
-    expect(document.body.innerHTML).to.be.empty
+    expect(document.body.innerHTML).to.be.empty // eslint-disable-line no-unused-expressions
   })
 
   it('accepts an html body', function () {
@@ -26,7 +26,7 @@ describe('check useEach true', function () {
   jsdom({ useEach: true })
 
   it('check that html body is empty', function () {
-    expect(document.body.innerHTML).to.be.empty
+    expect(document.body.innerHTML).to.be.empty // eslint-disable-line no-unused-expressions
   })
 
   it('accepts an html body', function () {
@@ -35,6 +35,6 @@ describe('check useEach true', function () {
   })
 
   it('changes to the dom do not persist between tests', function () {
-    expect(document.body.innerHTML).to.be.empty
+    expect(document.body.innerHTML).to.be.empty // eslint-disable-line no-unused-expressions
   })
 })

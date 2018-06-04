@@ -117,17 +117,17 @@ module.exports = function (_options) {
     // clean up stack trace
     if (err.stack) {
       err.stack = err.stack.split('\n')
-      .reduce(function (list, line) {
-        if (line.match(/node_modules.+(jsdom|mocha)/)) {
-          return list
-        }
+        .reduce(function (list, line) {
+          if (line.match(/node_modules.+(jsdom|mocha)/)) {
+            return list
+          }
 
-        line = line
-          .replace(/file:\/\/.*<script>/g, '<script>')
-          .replace(/:undefined:undefined/g, '')
-        list.push(line)
-        return list
-      }, []).join('\n')
+          line = line
+            .replace(/file:\/\/.*<script>/g, '<script>')
+            .replace(/:undefined:undefined/g, '')
+          list.push(line)
+          return list
+        }, []).join('\n')
     }
 
     return err
