@@ -1,3 +1,13 @@
+## [v1.2.0]
+> Jun 5, 2018
+
+* [#29] - Update Jsdom compatibility ([@RobLoach])
+* [#31] - Update all npm dependencies
+
+[#29]: https://github.com/rstacruz/mocha-jsdom/issues/29
+[#31]: https://github.com/rstacruz/mocha-jsdom/issues/31
+[@RobLoach]: https://github.com/robloach
+
 ## [v1.1.0]
 > Feb 22, 2016
 
