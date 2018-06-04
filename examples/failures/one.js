@@ -9,6 +9,6 @@ describe('error', function () {
   })
 
   it('fails', function () {
-    expect(global.document).be.undefined
+    expect(global.document).be.undefined // eslint-disable-line no-unused-expressions
   })
 })

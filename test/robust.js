@@ -11,6 +11,6 @@ describe('robust', function () {
   jsdom()
 
   it('has window', function () {
-    expect(global.window).to.not.be.undefined
+    expect(global.window).to.not.be.undefined // eslint-disable-line no-unused-expressions
   })
 })
