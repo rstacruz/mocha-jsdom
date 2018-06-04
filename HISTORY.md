@@ -1,3 +1,13 @@
+## [v2.0.0]
+> Jun 5, 2018
+
+See [Upgrading to v2.0.0](https://github.com/rstacruz/mocha-jsdom#upgrading-to-v200) for notes on how to update from an older version.
+
+* [#32] - `jsdom` is now a direct dependency of `mocha-jsdom` :tada:
+
+[#32]: https://github.com/rstacruz/mocha-jsdom/issues/32
+[v2.0.0]: https://github.com/rstacruz/mocha-jsdom/compare/v1.2.0...v2.0.0
+
 ## [v1.2.0]
 > Jun 5, 2018
 
@@ -7,6 +17,7 @@
 [#29]: https://github.com/rstacruz/mocha-jsdom/issues/29
 [#31]: https://github.com/rstacruz/mocha-jsdom/issues/31
 [@RobLoach]: https://github.com/robloach
+[v1.2.0]: https://github.com/rstacruz/mocha-jsdom/compare/v1.1.0...v1.2.0
 
 ## [v1.1.0]
 > Feb 22, 2016
