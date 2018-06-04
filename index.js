@@ -1,4 +1,4 @@
-var extend = require('util')._extend
+var extend = Object.assign || require('util')._extend // eslint-disable-line node/no-deprecated-api
 var Path = require('path')
 
 /*
@@ -17,7 +17,8 @@ var defaults = {
   console: true,
   useEach: false,
   skipWindowCheck: false,
-  html: "<!doctype html><html><head><meta charset='utf-8'></head>" +
+  html:
+    "<!doctype html><html><head><meta charset='utf-8'></head>" +
     '<body></body></html>'
 }
 
@@ -46,7 +47,8 @@ module.exports = function (_options) {
     if (global.window && !options.skipWindowCheck) {
       throw new Error(
         'mocha-jsdom: already a browser environment, or mocha-jsdom invoked ' +
-        "twice. use 'skipWindowCheck' to disable this check.")
+          "twice. use 'skipWindowCheck' to disable this check."
+      )
     }
     require('jsdom/lib/old-api').env(
       extend(extend({}, options), { done: done })
@@ -95,7 +97,9 @@ module.exports = function (_options) {
       if (~blacklist.indexOf(key)) continue
       if (global[key]) {
         if (process.env.JSDOM_VERBOSE) {
-          console.warn("[jsdom] Warning: skipping cleanup of global['" + key + "']")
+          console.warn(
+            "[jsdom] Warning: skipping cleanup of global['" + key + "']"
+          )
         }
         continue
       }
@@ -116,7 +120,8 @@ module.exports = function (_options) {
 
     // clean up stack trace
     if (err.stack) {
-      err.stack = err.stack.split('\n')
+      err.stack = err.stack
+        .split('\n')
         .reduce(function (list, line) {
           if (line.match(/node_modules.+(jsdom|mocha)/)) {
             return list
@@ -127,7 +132,8 @@ module.exports = function (_options) {
             .replace(/:undefined:undefined/g, '')
           list.push(line)
           return list
-        }, []).join('\n')
+        }, [])
+        .join('\n')
     }
 
     return err
@@ -172,7 +178,9 @@ function getCaller (offset) {
   if (typeof offset !== 'number') offset = 1
   var old = Error.prepareStackTrace
   var err = new Error()
-  Error.prepareStackTrace = function (err, stack) { return stack }
+  Error.prepareStackTrace = function (err, stack) {
+    return stack
+  }
   var fname = err.stack[1 + offset].getFileName()
   Error.prepareStackTrace = old
   return fname
