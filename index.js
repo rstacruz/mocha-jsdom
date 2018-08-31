@@ -12,7 +12,8 @@ blacklist.push('constructor')
  * default config
  */
 
-var defaults = {
+var defaults = {,
+  url: 'http://localhost',
   globalize: true,
   console: true,
   useEach: false,
