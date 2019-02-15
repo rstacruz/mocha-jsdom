@@ -1,4 +1,4 @@
-/* global it, before, window, describe, expect */
+/* global it, before, describe, expect */
 
 var jsdom = require('../index')
 
